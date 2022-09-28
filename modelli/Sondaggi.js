@@ -14,18 +14,26 @@ const sondaggiSchema = new mongoose.Schema({
     dataInizio: Date,
     dataFine: Date,
     emailCreatore: String,
-    emailDestinatari:[{
-        "email": String
+    emailDestinatari: [{
+        email: String
     }],
     domande: [{
-        "testo": String,
-        "tipologia": String,
-        "indice": Number
+
+        testo: String,
+        tipologia: String,
+        indice: Number,
+        
+        //non obbligatoria
+        risposte: [{
+            
+            risposta: String
+
+        }]
     }]
 },
-{
-    collection: "Sondaggi",
-    timestamp: true
-})
+    {
+        collection: "Sondaggi",
+        timestamp: true
+    })
 
 module.exports.Sondaggi = mongoose.model("Sondaggi", sondaggiSchema);

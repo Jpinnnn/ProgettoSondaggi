@@ -1,5 +1,5 @@
 const express = require('express');
-const mongodb = require('mongodb');
+const ObjectId = require('mongodb').ObjectId;
 const { Sondaggi } = require('../modelli/Sondaggi');
 
 const routerSondaggi = express.Router();
@@ -9,7 +9,7 @@ const routerSondaggi = express.Router();
 //Prende tutti i sondaggi dal db
 routerSondaggi.get('/getSondaggi', async (req, res) => {
     try {
-        const arraySondaggi = Sondaggi.find();
+        const arraySondaggi = await Sondaggi.find();
         console.log(arraySondaggi);
         res.send(arraySondaggi);
     } catch (error) {

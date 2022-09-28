@@ -3,7 +3,7 @@ const cors = require('cors');
 const connectToDb = require('./conn.js');
 //const router = require('./routes.js')
 const APIsondaggi = require('./APIs/APIsondaggi.js')
-const APIutenti = require('./APIs/APIutenti.js')
+//const APIutenti = require('./APIs/APIutenti.js')
 
 const os = require("os");
 const { writeFile } = require("fs");
@@ -21,7 +21,7 @@ app.use(express.json());
 // app.use(require('./routes.js'));
 
 app.use('/API', APIsondaggi);
-app.use(require('./APIs/APIsondaggi.js'));
+//app.use(require('./APIs/APIsondaggi.js'));
 // app.use('/API', APIutenti);
 // app.use(require('./APIs/APIutenti.js'));
 

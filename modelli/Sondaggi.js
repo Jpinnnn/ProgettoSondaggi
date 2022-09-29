@@ -7,6 +7,21 @@ const mongoose = require("mongoose");
  * testo, tipologia, indice, risposta[]:
  * 
 */
+const risposteSchema = new mongoose.Schema({
+    risposta: String
+})
+
+const domandeSchema = new mongoose.Schema({
+    testo: String,
+    tipologia: String,
+    indice: Number,
+    risposte: [risposteSchema]
+})
+
+const emailDestinatariSchema = new mongoose.Schema({
+    email: String
+})
+
 const sondaggiSchema = new mongoose.Schema({
     titolo: String,
     sottotitolo: String,
@@ -14,26 +29,14 @@ const sondaggiSchema = new mongoose.Schema({
     dataInizio: Date,
     dataFine: Date,
     emailCreatore: String,
-    emailDestinatari: [{
-        email: String
-    }],
-    domande: [{
-
-        testo: String,
-        tipologia: String,
-        indice: Number,
-        
-        //non obbligatoria
-        risposte: [{
-            
-            risposta: String
-
-        }]
-    }]
+    emailDestinatari: [emailDestinatariSchema],
+    domande: [domandeSchema]
 },
     {
         collection: "Sondaggi",
         timestamp: true
     })
+
+
 
 module.exports.Sondaggi = mongoose.model("Sondaggi", sondaggiSchema);

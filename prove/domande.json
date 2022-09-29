@@ -1,0 +1,62 @@
+{
+    "domande": [
+        {
+            "testo": "Quale cane ti piace tra i seguenti?",
+            "tipologia": "risposta singola",
+            "indice": "0", "risposte": [
+                {
+                    "riposta": "Golden retriever"
+                },
+                {
+                    "riposta": "Chiwawa"
+                },
+                {
+                    "riposta": "Bulldog"
+                },
+                {
+                    "riposta": "Pastore tedesco"
+                }
+            ]
+        },
+        {
+            "testo": "Cosa ti piace di più del cane in questione?",
+            "tipologia": "Risposta aperta",
+            "indice": "1",  "risposte": [
+                {
+                    "riposta": "Mi piace e basta."
+                }
+            ]
+        },
+        {
+            "testo": "Quanto è economico mantenere questo cane?",
+            "tipologia": "risposta singola",
+            "indice": "2", "risposte": [
+                {
+                    "riposta": "Carissimo"
+                },
+                {
+                    "riposta": "Caro"
+                },
+                {
+                    "riposta": "Nella media"
+                },
+                {
+                    "riposta": "Economico"
+                },
+                {
+                    "riposta": "Economicissimo"
+                }
+            ]
+        },
+        {
+            "testo": "Questa è una domanda vuota...",
+            "tipologia": "non ci sono risposte",
+            "indice": "3",
+            "risposte": [
+                {
+                    "riposta": ""
+                }
+            ]
+        }
+    ]
+}

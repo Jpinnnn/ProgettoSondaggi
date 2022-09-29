@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require('cors');
 const connectToDb = require('./conn.js');
-//const router = require('./routes.js')
+                                                            //const router = require('./routes.js')
 const APIsondaggi = require('./APIs/APIsondaggi.js')
 //const APIutenti = require('./APIs/APIutenti.js')
 
@@ -17,8 +17,8 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 
-// app.use('/API', router);
-// app.use(require('./routes.js'));
+                                                            // app.use('/API', router);
+                                                            // app.use(require('./routes.js'));
 
 app.use('/API', APIsondaggi);
 //app.use(require('./APIs/APIsondaggi.js'));

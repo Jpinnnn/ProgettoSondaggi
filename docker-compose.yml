@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  api-server:
+    image: jpinnnn/sondaggi:1.0
+    ports:
+      - 3000:3000 #dest:source
+    networks:
+      - mern-app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 54034:27017 #dest:source
+    networks:
+      - mern-app
+
+networks:
+  mern-app:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

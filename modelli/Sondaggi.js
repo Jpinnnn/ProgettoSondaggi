@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const mongoose = require("mongoose");
 
 /**La collezione rappresenta dei sondaggi che hanno come attributi:
@@ -7,11 +8,14 @@ const mongoose = require("mongoose");
  * testo, tipologia, indice, risposta[]:
  * 
 */
+
 const risposteSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     risposta: String
 })
 
 const domandeSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     testo: String,
     tipologia: String,
     indice: Number,
@@ -19,10 +23,12 @@ const domandeSchema = new mongoose.Schema({
 })
 
 const emailDestinatariSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     email: String
 })
 
 const sondaggiSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     titolo: String,
     sottotitolo: String,
     descrizione: String,
@@ -36,7 +42,5 @@ const sondaggiSchema = new mongoose.Schema({
         collection: "Sondaggi",
         timestamp: true
     })
-
-
 
 module.exports.Sondaggi = mongoose.model("Sondaggi", sondaggiSchema);

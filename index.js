@@ -7,7 +7,7 @@ const APIsondaggi = require('./APIs/APIsondaggi.js')
 
 const os = require("os");
 const { writeFile } = require("fs");
-const { readFile } = require("fs/promises");
+const { readFile } = require("fs");
 
 const emailList = require("./moduli/email-list");
 const prove = require ("./prove/prove");

@@ -25,11 +25,11 @@ routerSondaggi.get('/getSondaggi', async (req, res) => {
 })
 
 //Prende tutte le domande da un singolo sondaggio tramite id --OK
-routerSondaggi.get('/getSondaggioById', async (req, res) => {
+routerSondaggi.get('/getSondaggioById/:id', async (req, res) => {
     Sondaggi.init();
 
     try {
-        const idSondaggio = new ObjectId(req.params["id"]);
+        const idSondaggio = new ObjectId(req.params.id);
         const sondaggio = await Sondaggi.findOne({ id: idSondaggio });
         console.log(idSondaggio);
         console.log(sondaggio);
@@ -41,11 +41,11 @@ routerSondaggi.get('/getSondaggioById', async (req, res) => {
 })
 
 //Prende tutte le domande di un singolo sondaggio tramite id --OK
-routerSondaggi.get("/getDomandeByIdSondaggio", async (req, res) => {
+routerSondaggi.get("/getDomandeByIdSondaggio/:id", async (req, res) => {
     Sondaggi.init();
 
     try {
-        const idSondaggio = new ObjectId(req.params["id"]);
+        const idSondaggio = new ObjectId(req.params.id);
         const sondaggio = await Sondaggi.findOne({ id: idSondaggio });
         const domande = sondaggio.domande;
 
@@ -57,8 +57,7 @@ routerSondaggi.get("/getDomandeByIdSondaggio", async (req, res) => {
 })
 
 
-// Prende tutte le risposte di una singola domanda tramite id    --NON OK
-// FARE LA FIND A LIVELLI
+// Prende tutte le risposte di una singola domanda tramite id    --OK
 routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
     Sondaggi.init();
 
@@ -66,7 +65,7 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
         //const idDomanda = new ObjectId(req.params["id"]);
         const idDomanda = new ObjectId(req.params.id);
 
-        const sondaggio = await Sondaggi.findOne({ "domande": { $elemMatch: { _id: idDomanda } } })
+        const sondaggio = await Sondaggi.findOne({ "domande": { $elemMatch: { id: idDomanda } } })
 
         let risposte;
         sondaggio.domande.forEach(d => {

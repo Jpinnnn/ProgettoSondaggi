@@ -129,13 +129,13 @@ routerSondaggi.post("/postSondaggio", async (req, res) => {
 
 //------------------------------DELETEs--------------------------------------//
 
-//Elimina l'intero sondaggio tramite ID dello stesso
+//Elimina l'intero sondaggio tramite ID dello stesso --OK
 routerSondaggi.delete("/deleteSondaggioById/:id", async(req, res) =>{
     try {
-        const idDomanda = new ObjectId(req.params.id);
-        const domandaDaEliminare = await Sondaggi.deleteOne({ "domande": { $elemMatch: { id: idDomanda } } })
-        console.log(domandaDaEliminare);
-        res.send(domandaDaEliminare);
+        const idSondaggio = new ObjectId(req.params.id);
+        const sondaggioDaEliminare = await Sondaggi.deleteOne({ _id: idSondaggio }  )
+        console.log(sondaggioDaEliminare);
+        res.send(sondaggioDaEliminare);
     } catch (error) {
         res.status(500).json({ messaggio: error.message })
     }
@@ -143,16 +143,40 @@ routerSondaggi.delete("/deleteSondaggioById/:id", async(req, res) =>{
 
 //Elimina una determinata domanda tramite ID    --NON OK, elimina l'intero sondaggio
 //Va fatto un update
-routerSondaggi.delete("/deleteDomandaById/:id", async(req, res) =>{
-    try {
-        const idDomanda = new ObjectId(req.params.id);
-        const domandaDaEliminare = await Sondaggi.deleteOne({ "domande": { $elemMatch: { id: idDomanda } } })
-        console.log(domandaDaEliminare);
-        res.send(domandaDaEliminare);
-    } catch (error) {
-        res.status(500).json({ messaggio: error.message })
-    }
-})
+// routerSondaggi.delete("/deleteDomandaById/:id", async(req, res) =>{
+//     try {
+//         const idDomanda = new ObjectId(req.params.id);
+//         //Trovo il sondaggio con quella domanda specifica
+//         const sondaggioTrovato = await Sondaggi.find({"domande": {$elemMatch: {_id: idDomanda}}});
+
+//         //console.log("TROVATO SONDAGGIO:", sondaggioTrovato);
+
+//         const arrayDomande = sondaggioTrovato.domande;
+
+//         console.log(sondaggioTrovato.domande);
+
+//         let domandaDaEliminare = '';
+
+//         arrayDomande.forEach(e => {
+//             console.log("Trovata domanda " + e);
+
+//             if(e.id == idDomanda){
+//                 domandaDaEliminare = e.domanda;
+//                 console.log(domandaDaEliminare);
+//                 res.send(domandaDaEliminare)
+//                 //domandaDaEliminare = e.deleteOne({_id: idDomanda});
+//             }
+//         });
+
+//         //res.send(domandaDaEliminare);
+
+//         //const domandaDaEliminare = await Sondaggi.deleteOne({ "domande": { $elemMatch: { _id: idDomanda } } })
+//         //console.log(domandaDaEliminare);
+//         //res.send(domandaDaEliminare);
+//     } catch (error) {
+//         res.status(500).json({ messaggio: error.message })
+//     }
+// })
 
 
 module.exports = routerSondaggi;

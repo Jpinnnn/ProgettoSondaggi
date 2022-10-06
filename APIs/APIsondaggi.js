@@ -4,11 +4,6 @@ const { Sondaggi } = require('../modelli/Sondaggi');
 
 const routerSondaggi = express.Router();
 
-const mongoose = require('mongoose');
-// const Modello = mongoose.model("modelloSondaggi", Sondaggi);
-//const modelloquery = new Modello();
-
-
 //------------------------------GETs--------------------------------------//
 
 //Prende tutti i sondaggi completi dal db --OK
@@ -30,7 +25,7 @@ routerSondaggi.get('/getSondaggioById/:id', async (req, res) => {
 
     try {
         const idSondaggio = new ObjectId(req.params.id);
-        const sondaggio = await Sondaggi.findOne({ id: idSondaggio });
+        const sondaggio = await Sondaggi.findOne({ _id: idSondaggio });
         console.log(idSondaggio);
         console.log(sondaggio);
         res.send(sondaggio);
@@ -46,7 +41,7 @@ routerSondaggi.get("/getDomandeByIdSondaggio/:id", async (req, res) => {
 
     try {
         const idSondaggio = new ObjectId(req.params.id);
-        const sondaggio = await Sondaggi.findOne({ id: idSondaggio });
+        const sondaggio = await Sondaggi.findOne({ _id: idSondaggio });
         const domande = sondaggio.domande;
 
         console.log(domande);
@@ -56,7 +51,6 @@ routerSondaggi.get("/getDomandeByIdSondaggio/:id", async (req, res) => {
     }
 })
 
-
 // Prende tutte le risposte di una singola domanda tramite id    --OK
 routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
     Sondaggi.init();
@@ -65,7 +59,7 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
         //const idDomanda = new ObjectId(req.params["id"]);
         const idDomanda = new ObjectId(req.params.id);
 
-        const sondaggio = await Sondaggi.findOne({ "domande": { $elemMatch: { id: idDomanda } } })
+        const sondaggio = await Sondaggi.findOne({ "domande": { $elemMatch: { _id: idDomanda } } })
 
         let risposte;
         sondaggio.domande.forEach(d => {
@@ -83,23 +77,15 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
     }
 })
 
-
 //------------------------------POSTs--------------------------------------//
 /**
  ** Crea un nuovo sondaggio completo    --OK
 **/
 
-//CAPIRE COME FARE POST DELLE DATE PRECISE
 routerSondaggi.post("/postSondaggio", async (req, res) => {
-
     Sondaggi.init();
-    //console.log(req.body.emailDestinatari.email);
-    // let answers = req.body.domande.risposte.map((r) =>(
-    //     { risposta: r.risposta }
-    // ))
-
+    
     try {
-
         let mails = req.body.emailDestinatari.map((m) => ({
             _id: new ObjectId,
             email: m.email
@@ -119,14 +105,14 @@ routerSondaggi.post("/postSondaggio", async (req, res) => {
                 ))
             }
         ));
-
+ 
         const nuovoSondaggio = new Sondaggi({
             _id: new ObjectId,
             titolo: req.body.titolo,
             sottotitolo: req.body.sottotitolo,
             descrizione: req.body.descrizione,
-            dataInizio: req.body.dataInizio,
-            dataFine: req.body.dataFine,
+            dataInizio: new Date(req.body.dataInizio),
+            dataFine: new Date(req.body.dataFine),
             emailCreatore: req.body.emailCreatore,
             emailDestinatari:
                 mails,                                  //array di email
@@ -137,11 +123,36 @@ routerSondaggi.post("/postSondaggio", async (req, res) => {
         return res.send(nuovoSondaggio);
 
     } catch (error) {
-        // console.log(mails, questions)
         res.status(500).json({ messaggio: error.message })
-
     }
-
 })
+
+//------------------------------DELETEs--------------------------------------//
+
+//Elimina l'intero sondaggio tramite ID dello stesso
+routerSondaggi.delete("/deleteSondaggioById/:id", async(req, res) =>{
+    try {
+        const idDomanda = new ObjectId(req.params.id);
+        const domandaDaEliminare = await Sondaggi.deleteOne({ "domande": { $elemMatch: { id: idDomanda } } })
+        console.log(domandaDaEliminare);
+        res.send(domandaDaEliminare);
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
+
+//Elimina una determinata domanda tramite ID    --NON OK, elimina l'intero sondaggio
+//Va fatto un update
+routerSondaggi.delete("/deleteDomandaById/:id", async(req, res) =>{
+    try {
+        const idDomanda = new ObjectId(req.params.id);
+        const domandaDaEliminare = await Sondaggi.deleteOne({ "domande": { $elemMatch: { id: idDomanda } } })
+        console.log(domandaDaEliminare);
+        res.send(domandaDaEliminare);
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
+
 
 module.exports = routerSondaggi;

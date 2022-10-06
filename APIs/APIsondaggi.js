@@ -144,6 +144,8 @@ routerSondaggi.delete("/deleteSondaggioById/:id", async(req, res) =>{
 //Elimina una determinata domanda tramite ID    --NON OK, elimina l'intero sondaggio
 //Va fatto un update
 // routerSondaggi.delete("/deleteDomandaById/:id", async(req, res) =>{
+//     Sondaggi.init();
+//    
 //     try {
 //         const idDomanda = new ObjectId(req.params.id);
 //         //Trovo il sondaggio con quella domanda specifica

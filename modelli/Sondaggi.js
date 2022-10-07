@@ -34,6 +34,7 @@ const sondaggiSchema = new mongoose.Schema({
     descrizione: String,
     dataInizio: Date,
     dataFine: Date,
+    stato: String,
     emailCreatore: String,
     emailDestinatari: [emailDestinatariSchema],
     domande: [domandeSchema]

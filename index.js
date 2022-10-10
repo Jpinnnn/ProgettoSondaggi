@@ -31,19 +31,23 @@ app.get('/', function (req, res) {
     res.send('Benvenuto sulla home!'+ '<br></br>' +' Le API disponibili sono:'+ '<br></br>' +
     '------------------------------------------GETs----------------------------------------'+
     '<br></br>'+
-    '/API/getSondaggi => prende la lista dei sondaggi dal DB (get)' + '<br></br>' +
-    '/API/getSondaggioById => prende il SINGOLO sondaggio tramite id (get)' + '<br></br>' +
-    '/API/getDomandeByIdSondaggio => prende la lista delle domande  tramite ID del sondaggio (get)' + '<br></br>' +
-    '/API/getRisposteByIdDomanda => prende la lista delle risposte tramite ID della domanda (get)' + '<br></br>' +
+    '/API/getSondaggi => prende la lista dei sondaggi dal DB' + '<br></br>' +
+    '/API/getSondaggioById => prende il SINGOLO sondaggio tramite ID' + '<br></br>' +
+    '/API/getDomandeByIdSondaggio => prende la lista delle domande  tramite ID del sondaggio' + '<br></br>' +
+    '/API/getRisposteByIdDomanda => prende la lista delle risposte tramite ID della domanda' + '<br></br>' +
     '------------------------------------------POSTs----------------------------------------'+
     '<br></br>'+
-    '/API/postSondaggio => crea un nuovo sondaggio completo (post)' + '<br></br>'+
+    '/API/postSondaggio => crea un nuovo sondaggio completo' + '<br></br>'+
+    '/API/postSondaggio1 => aggiunge un json con soli _id, titolo, sottotitolo,'+
+    ' descrizione, dataInizio, dataFine, stato, emailCreatore, tutti gli altri campi vuoti'+ '<br></br>' +
     '------------------------------------------DELETEs----------------------------------------'+
     '<br></br>'+
-    '/API/deleteSondaggioById => elimina un sondaggio tramite ID (delete)' + '<br></br>'+
+    '/API/deleteSondaggioById => elimina un sondaggio tramite ID' + '<br></br>'+
     '------------------------------------------PATCHes----------------------------------------'+
     '<br></br>'+
-    '/API/deleteDomandaById => elimina una domanda tramite ID (patch)'+'<br></br>'+
+    '/API/deleteDomandaById => elimina una domanda tramite ID'+'<br></br>'+
+    '/API/deleteDomandaById => Aggiunge un elemento delle email alla volta '+
+    'al sondaggio corrente (passare ID sondaggio, emailDestinatari nel body)'+'<br></br>'+
     '')
   })
 

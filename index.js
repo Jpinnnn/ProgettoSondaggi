@@ -48,6 +48,7 @@ app.get('/', function (req, res) {
     '/API/deleteDomandaById => elimina una domanda tramite ID'+'<br></br>'+
     '/API/deleteDomandaById => Aggiunge un elemento delle email alla volta '+
     'al sondaggio corrente (passare ID sondaggio, emailDestinatari nel body)'+'<br></br>'+
+    "/API/updateDomandaById => Modifica il testo, la tipologia e l'indice della domanda tramite l'ID"+
     '')
   })
 

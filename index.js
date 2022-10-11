@@ -58,9 +58,9 @@ app.get('/', function (req, res) {
     "[GET] /API/getSondaggi => prende la lista dei sondaggi dal DB"+'<br></br>'+
     "[GET] /API/getSondaggioById => prende il SINGOLO sondaggio tramite ID"+'<br></br>'+
     "[POST] /API/postSondaggio => crea un nuovo sondaggio completo"+'<br></br>'+
-    "/API/postSondaggio1 => aggiunge un json con soli _id, titolo, sottotitolo,"+
+    "[POST] /API/postSondaggio1 => aggiunge un json con soli _id, titolo, sottotitolo,"+
     " descrizione, dataInizio, dataFine, stato, emailCreatore, tutti gli altri campi vuoti"+'<br></br>'+
-    "[PATCH] {toDo} /API/updateSondaggioById => update dei parametri del sondaggio"+'<br></br>'+
+    "[PATCH] /API/updateSondaggioById => update dei parametri del sondaggio"+'<br></br>'+
     "[DELETE] /API/deleteSondaggioById => elimina un sondaggio tramite ID"+'<br></br>'+
 
     '-------------------------------------emailDestinatari-----------------------------------'+

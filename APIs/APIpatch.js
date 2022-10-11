@@ -6,6 +6,36 @@ const routerSondaggi = express.Router();
 
 //------------------------------PATCHes--------------------------------------//
 
+//Aggiorna i parametri del sondaggio tramite ID
+routerSondaggi.patch("/updateSondaggioById/:id", async (req, res) => {
+    Sondaggi.init();
+    try {
+        const idSondaggio = new ObjectId(req.params.id);
+        const newTitolo = req.body.titolo;
+        const newSottottolo = req.body.sottottolo;
+        const newDescrizione = req.body.descrizione;
+        const newDataInizio = new Date(req.body.dataInizio);
+        const newDataFine = new Date(req.body.dataFine);
+        const newEmailCreatore = req.body.emailCreatore;
+
+        const nuovoSondaggio = await Sondaggi.updateOne(
+            {_id: idSondaggio},
+            {$set:{
+                "titolo": newTitolo,
+                "sottotitolo": newSottottolo,
+                "descrizione": newDescrizione,
+                "dataInizio": newDataInizio,
+                "dataFine": newDataFine,
+                "emailCreatore": newEmailCreatore
+            }}
+        )
+        console.log(nuovoSondaggio);
+        res.send(nuovoSondaggio);
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
+
 //Elimina una determinata domanda tramite ID    --OK
 routerSondaggi.patch("/deleteDomandaById/:id", async (req, res) => {
     Sondaggi.init();

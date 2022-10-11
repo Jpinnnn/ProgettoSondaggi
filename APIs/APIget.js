@@ -79,4 +79,22 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
     }
 })
 
+//Prende la lista delle email dei destinatari tramite id del sondaggio
+routerSondaggi.get("/getDestinatari/:id", async (req, res) => {
+    Sondaggi.init();
+    try {
+        const idSondaggio = new ObjectId(req.params.id)
+        const sondaggioTrovato = await Sondaggi.findOne({_id: idSondaggio});
+        const destinatari = sondaggioTrovato.emailDestinatari;
+
+        console.log(destinatari);
+        res.send(destinatari);
+
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
+
+
+
 module.exports = routerSondaggi;

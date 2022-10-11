@@ -29,7 +29,8 @@ app.listen(port, () =>{
 
 app.get('/', function (req, res) {
     res.send('Benvenuto sulla home!'+ '<br></br>' +' Le API disponibili sono:'+ '<br></br>' +
-    '------------------------------------------GETs----------------------------------------'+
+    
+    /*'------------------------------------------GETs----------------------------------------'+
     '<br></br>'+
     '/API/getSondaggi => prende la lista dei sondaggi dal DB' + '<br></br>' +
     '/API/getSondaggioById => prende il SINGOLO sondaggio tramite ID' + '<br></br>' +
@@ -46,9 +47,46 @@ app.get('/', function (req, res) {
     '------------------------------------------PATCHes----------------------------------------'+
     '<br></br>'+
     '/API/deleteDomandaById => elimina una domanda tramite ID'+'<br></br>'+
-    '/API/deleteDomandaById => Aggiunge un elemento delle email alla volta '+
+    '/API/aggiungiDestinatario => Aggiunge un elemento delle email alla volta '+
     'al sondaggio corrente (passare ID sondaggio, emailDestinatari nel body)'+'<br></br>'+
     "/API/updateDomandaById => Modifica il testo, la tipologia e l'indice della domanda tramite l'ID"+
+    '<br></br>'+
+    */
+
+    '----------------------------------------Sondaggio---------------------------------------'+
+    '<br></br>'+
+    "[GET] /API/getSondaggi => prende la lista dei sondaggi dal DB"+'<br></br>'+
+    "[GET] /API/getSondaggioById => prende il SINGOLO sondaggio tramite ID"+'<br></br>'+
+    "[POST] /API/postSondaggio => crea un nuovo sondaggio completo"+'<br></br>'+
+    "/API/postSondaggio1 => aggiunge un json con soli _id, titolo, sottotitolo,"+
+    " descrizione, dataInizio, dataFine, stato, emailCreatore, tutti gli altri campi vuoti"+'<br></br>'+
+    "[PATCH] {toDo} /API/updateSondaggioById => update dei parametri del sondaggio"+'<br></br>'+
+    "[DELETE] /API/deleteSondaggioById => elimina un sondaggio tramite ID"+'<br></br>'+
+
+    '-------------------------------------emailDestinatari-----------------------------------'+
+    '<br></br>'+
+    "[GET] {toDo} /API/getDestinatari => prende la lista dei destinatari"+'<br></br>'+
+    "[PATCH] /API/aggiungiDestinatario => Aggiunge un elemento delle email alla volta "+
+    "al sondaggio corrente (passare ID sondaggio, emailDestinatari nel body)"+'<br></br>'+
+    "[PATCH] {toDo} /API/updateDestinatarioById => aggiorna la email del destinatario tramite ID"+'<br></br>'+
+    "[PATCH] {toDo} /API/deleteDestinatarioById => elimina la email del destinatario tramite ID"+'<br></br>'+
+    
+    '------------------------------------------Domande---------------------------------------'+
+    '<br></br>'+
+    "[GET] /API/getDomandeByIdSondaggio => prende la lista delle domande  tramite ID del sondaggio"+'<br></br>'+
+    "[PATCH] {toDo} /API/aggiungiDomanda => inserisce una nuova domanda "+'<br></br>'+
+    "[PATCH] /API/updateDomandaById => modifica il testo, la tipologia e l'indice della domanda tramite l'ID"+'<br></br>'+
+    "[PATCH] /API/deleteDomandaById => elimina una domanda tramite ID"+'<br></br>'+
+
+    '------------------------------------------Risposte----------------------------------------'+
+    '<br></br>'+
+    "[GET] /API/getRisposteByIdDomanda => prende la lista delle risposte tramite ID della domanda"+'<br></br>'+
+    "[PATCH] {toDo} /API/aggiungiRisposta => aggiunge una risposta all'elenco"+'<br></br>'+
+    "[PATCH] {toDo} /API/updateRispostaById => modifica una risposta tramite ID"+'<br></br>'+
+    "[PATCH] {toDo} /API/deleteRispostaById => elimina una risposta tramite ID"+'<br></br>'+
+    
     '')
+
+
   })
 

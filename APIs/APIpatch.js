@@ -76,7 +76,14 @@ routerSondaggi.patch("/updateDomandaById/:id", async (req, res) => {
 
         const aggiornaDomanda = await Sondaggi.updateOne(
             { _id: idSondaggio, "domande._id": idDomanda },
-            { $set: { "domande.$.testo": testoModificato, "domande.$.tipologia": tipologiaModificata, "domande.$.indice": indiceModificato } }
+            {
+                $set:
+                {
+                    "domande.$.testo": testoModificato,
+                    "domande.$.tipologia": tipologiaModificata,
+                    "domande.$.indice": indiceModificato
+                }
+            }
         )
 
         console.log(aggiornaDomanda);
@@ -97,7 +104,8 @@ routerSondaggi.patch("/aggiungiDestinatario/:id", async (req, res) => {
 
         const arrayEmailDest = sondaggioTrovato.emailDestinatari;
         const arrayEmailDestAggiornato = await Sondaggi.updateOne(
-            { _id: idSondaggio }, { $push: { "emailDestinatari": { _id: new ObjectId, email: emailAdd } } });
+            { _id: idSondaggio },
+            { $push: { "emailDestinatari": { _id: new ObjectId, email: emailAdd } } });
 
         console.log(arrayEmailDestAggiornato);
         res.send(arrayEmailDestAggiornato);
@@ -230,6 +238,75 @@ routerSondaggi.patch("/deleteDestinatarioById/:id", async (req, res) => {
         res.status(500).json({ messaggio: error.message })
     }
 })
+
+//Aggiunge una risposta tramite ID della domanda
+routerSondaggi.patch("/aggiungiRispostaByIdDomanda/:id", async (req, res) => {
+    Sondaggi.init();
+    try {
+        const idDomanda = new ObjectId(req.params.id);
+        const newRisposta = req.body.risposta;
+
+        const sondaggioTrovato = await Sondaggi.findOne(
+            { "domande": { $elemMatch: { _id: idDomanda } } }
+        );
+        const idSondaggio = new ObjectId(sondaggioTrovato.id);
+
+        const nuovaRisposta = await Sondaggi.updateOne(
+            { _id: idSondaggio, "domande._id": idDomanda },
+            {
+                $push: {
+                    "domande.$.risposte": {
+                        _id: new ObjectId(),
+                        risposta: newRisposta
+                    }
+                }
+            }
+        )
+        console.log(nuovaRisposta);
+        res.send(nuovaRisposta);
+
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
+
+//Modifica una risposta tramite ID  --NON OK
+routerSondaggi.patch("/updateRispostaById/:id", async (req, res) => {
+    Sondaggi.init();
+    try {
+        const idRisposta = new ObjectId(req.params.id);
+        const newRisposta = req.body.risposta;
+
+        console.log("ID RISPOSTA: ", idRisposta)
+
+        // const sondaggioTrovato = await Sondaggi.findOne(
+        //     { "domande.$[].risposte.$[]._id.$[idR]":idRisposta }  
+        // );
+
+        // const idSondaggio = new ObjectId(sondaggioTrovato.id);
+        // console.log("ID SONDAGGIO TROVATO fda7: ", sondaggioTrovato.id)
+
+
+        const nuovaRisposta = await Sondaggi.updateOne(
+            { "domande.$[].risposte.$[].risposta": newRisposta },
+            {arrayFilters: [{"risposte._id": idRisposta}]}
+            // console.log("NUOVARISPOSTA: ", idRisposta),
+            // {
+            //     $set: {
+            //         "risposte.$.risposta": newRisposta
+            //     }
+            // }
+        )
+        console.log(nuovaRisposta);
+        res.send(nuovaRisposta);
+
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
+
+
+
 
 
 

@@ -82,7 +82,7 @@ app.get('/', function (req, res) {
     '------------------------------------------Risposte----------------------------------------'+
     '<br></br>'+
     "[GET] /API/getRisposteByIdDomanda => prende la lista delle risposte tramite ID della domanda"+'<br></br>'+
-    "[PATCH] {toDo} /API/aggiungiRisposta => aggiunge una risposta all'elenco"+'<br></br>'+
+    "[PATCH] /API/aggiungiRispostaByIdDomanda => aggiunge una risposta all'elenco di una domanda"+'<br></br>'+
     "[PATCH] {toDo} /API/updateRispostaById => modifica una risposta tramite ID"+'<br></br>'+
     "[PATCH] {toDo} /API/deleteRispostaById => elimina una risposta tramite ID"+'<br></br>'+
     

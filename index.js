@@ -65,16 +65,17 @@ app.get('/', function (req, res) {
 
     '-------------------------------------emailDestinatari-----------------------------------'+
     '<br></br>'+
-    "[GET] {toDo} /API/getDestinatari => prende la lista dei destinatari"+'<br></br>'+
+    "[GET] /API/getDestinatari => prende la lista dei destinatari"+'<br></br>'+
     "[PATCH] /API/aggiungiDestinatario => Aggiunge un elemento delle email alla volta "+
     "al sondaggio corrente (passare ID sondaggio, emailDestinatari nel body)"+'<br></br>'+
-    "[PATCH] {toDo} /API/updateDestinatarioById => aggiorna la email del destinatario tramite ID"+'<br></br>'+
-    "[PATCH] {toDo} /API/deleteDestinatarioById => elimina la email del destinatario tramite ID"+'<br></br>'+
+    "[PATCH] /API/updateDestinatarioById => aggiorna la email del destinatario tramite ID"+'<br></br>'+
+    "[PATCH] /API/deleteDestinatarioById => elimina la email del destinatario tramite ID"+'<br></br>'+
     
     '------------------------------------------Domande---------------------------------------'+
     '<br></br>'+
     "[GET] /API/getDomandeByIdSondaggio => prende la lista delle domande  tramite ID del sondaggio"+'<br></br>'+
-    "[PATCH] {toDo} /API/aggiungiDomanda => inserisce una nuova domanda "+'<br></br>'+
+    "[PATCH] /API/aggiungiDomanda => inserisce una nuova domanda SENZA risposte"+'<br></br>'+
+    "[PATCH] /API/aggiungiDomandaCompleta => inserisce una nuova domanda CON ARRAY di risposte"+'<br></br>'+
     "[PATCH] /API/updateDomandaById => modifica il testo, la tipologia e l'indice della domanda tramite l'ID"+'<br></br>'+
     "[PATCH] /API/deleteDomandaById => elimina una domanda tramite ID"+'<br></br>'+
 

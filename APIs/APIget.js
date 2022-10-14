@@ -79,7 +79,7 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
     }
 })
 
-//Prende la lista delle email dei destinatari tramite id del sondaggio
+//Prende la lista delle email dei destinatari tramite id del sondaggio --OK
 routerSondaggi.get("/getDestinatari/:id", async (req, res) => {
     Sondaggi.init();
     try {

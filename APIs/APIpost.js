@@ -73,13 +73,13 @@ routerSondaggi.post("/postSondaggio1", async(req, res)=>{
     try {
         const nuovoSondaggio = new Sondaggi({
             _id: new ObjectId,
-            titolo: req.body.titolo,
-            sottotitolo: req.body.sottotitolo,
-            descrizione: req.body.descrizione,
-            dataInizio: new Date(req.body.dataInizio),
-            dataFine: new Date(req.body.dataFine),
-            stato: req.body.stato,
-            emailCreatore: req.body.emailCreatore
+            "titolo": req.body.titolo,
+            "sottotitolo": req.body.sottotitolo,
+            "descrizione": req.body.descrizione,
+            "dataInizio": new Date(req.body.dataInizio),
+            "dataFine": new Date(req.body.dataFine),
+            "stato": req.body.stato,
+            "emailCreatore": req.body.emailCreatore
         })
 
         await nuovoSondaggio.save();

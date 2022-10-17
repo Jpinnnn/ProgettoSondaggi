@@ -270,33 +270,57 @@ routerSondaggi.patch("/aggiungiRispostaByIdDomanda/:id", async (req, res) => {
     }
 })
 
-//Modifica una risposta tramite ID  --NON OK
+//Modifica una risposta tramite ID della risposta  --OK
 routerSondaggi.patch("/updateRispostaById/:id", async (req, res) => {
     Sondaggi.init();
     try {
         const idRisposta = new ObjectId(req.params.id);
         const newRisposta = req.body.risposta;
 
-        console.log("ID RISPOSTA: ", idRisposta)
+        //console.log("ID RISPOSTA: ", idRisposta)
 
-        // const sondaggioTrovato = await Sondaggi.findOne(
-        //     { "domande.$[].risposte.$[]._id.$[idR]":idRisposta }  
-        // );
+        const listaSondaggi = await Sondaggi.find({});
+        let sondaggioTrovato = Sondaggi.init();
+        let domandaTrovata;
 
-        // const idSondaggio = new ObjectId(sondaggioTrovato.id);
-        // console.log("ID SONDAGGIO TROVATO fda7: ", sondaggioTrovato.id)
+        //Cosa più INEFFICENTE del mondo - trovo il sondaggio di quella risposta
+        listaSondaggi.forEach(s => {
+            s.domande.forEach(d => {
+                d.risposte.forEach(r => {
+                    if (r.id == idRisposta) {
+                        sondaggioTrovato = s;
+                        domandaTrovata = d;
+                    }
+                });
+            })
+        })
 
-
-        const nuovaRisposta = await Sondaggi.updateOne(
-            { "domande.$[].risposte.$[].risposta": newRisposta },
-            {arrayFilters: [{"risposte._id": idRisposta}]}
-            // console.log("NUOVARISPOSTA: ", idRisposta),
-            // {
-            //     $set: {
-            //         "risposte.$.risposta": newRisposta
-            //     }
-            // }
+        const idSondaggio = new ObjectId(sondaggioTrovato.id);
+        const idDomanda = new ObjectId(domandaTrovata.id);
+        //Elimino la risposta
+        const eliminaRisposta = await Sondaggi.updateOne(
+            { _id: idSondaggio, "domande._id": idDomanda },
+            {
+                $pull: {
+                    "domande.$.risposte": {
+                        _id: idRisposta
+                    }
+                }
+            }
         )
+        //Ricostruisco la risposta
+        const nuovaRisposta = await Sondaggi.updateOne(
+            { _id: idSondaggio, "domande._id": idDomanda },
+            {
+                $push: {
+                    "domande.$.risposte": {
+                        _id: idRisposta,
+                        risposta: newRisposta
+                    }
+                }
+            }
+        )
+
         console.log(nuovaRisposta);
         res.send(nuovaRisposta);
 
@@ -305,10 +329,52 @@ routerSondaggi.patch("/updateRispostaById/:id", async (req, res) => {
     }
 })
 
+//Elimina una risposta tramite ID della risposta  --OK
+routerSondaggi.patch("/deleteRispostaById/:id", async (req, res) => {
+    Sondaggi.init();
+    try {
+        const idRisposta = new ObjectId(req.params.id);
+        const newRisposta = req.body.risposta;
 
+        console.log("ID RISPOSTA: ", idRisposta)
 
+        const listaSondaggi = await Sondaggi.find({});
+        let sondaggioTrovato = Sondaggi.init();
+        let domandaTrovata;
 
+        //Cosa più INEFFICENTE del mondo - trovo il sondaggio di quella risposta
+        listaSondaggi.forEach(s => {
+            s.domande.forEach(d => {
+                d.risposte.forEach(r => {
+                    if (r.id == idRisposta) {
+                        sondaggioTrovato = s;
+                        domandaTrovata = d;
+                    }
+                });
+            })
+        })
 
+        const idSondaggio = new ObjectId(sondaggioTrovato.id);
+        const idDomanda = new ObjectId(domandaTrovata.id);
+        //Elimino la risposta
+        const eliminaRisposta = await Sondaggi.updateOne(
+            { _id: idSondaggio, "domande._id": idDomanda },
+            {
+                $pull: {
+                    "domande.$.risposte": {
+                        _id: idRisposta
+                    }
+                }
+            }
+        )
+        
+        console.log(eliminaRisposta);
+        res.send(eliminaRisposta);
+
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
 
 /*
 //Aggiunge un array di elementi di email al sondaggio corrente (passare ID sondaggio) --NON OK

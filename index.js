@@ -83,8 +83,8 @@ app.get('/', function (req, res) {
     '<br></br>'+
     "[GET] /API/getRisposteByIdDomanda => prende la lista delle risposte tramite ID della domanda"+'<br></br>'+
     "[PATCH] /API/aggiungiRispostaByIdDomanda => aggiunge una risposta all'elenco di una domanda"+'<br></br>'+
-    "[PATCH] {toDo} /API/updateRispostaById => modifica una risposta tramite ID"+'<br></br>'+
-    "[PATCH] {toDo} /API/deleteRispostaById => elimina una risposta tramite ID"+'<br></br>'+
+    "[PATCH] /API/updateRispostaById => modifica una risposta tramite ID"+'<br></br>'+
+    "[PATCH] /API/deleteRispostaById => elimina una risposta tramite ID"+'<br></br>'+
     
     '')
 

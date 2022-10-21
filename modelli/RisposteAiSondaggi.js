@@ -34,7 +34,7 @@ const risposteSchema = new mongoose.Schema({
 
 const dettaglioRispostaSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    risposta: String
+    dettaglioRisposta: String
 })
 
 

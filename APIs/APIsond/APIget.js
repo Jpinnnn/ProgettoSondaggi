@@ -1,6 +1,6 @@
 const express = require('express');
 const ObjectId = require('mongodb').ObjectId;
-const { Sondaggi } = require('../modelli/Sondaggi');
+const { Sondaggi } = require('../../modelli/Sondaggi');
 
 const routerSondaggi = express.Router();
 
@@ -20,7 +20,6 @@ routerSondaggi.get('/getSondaggi', async (req, res) => {
     }
 })
 
-//SU DOCKER SEMBRA NON ANDARE
 //Prende tutte le domande da un singolo sondaggio tramite id --OK
 routerSondaggi.get('/getSondaggioById/:id', async (req, res) => {
     Sondaggi.init();

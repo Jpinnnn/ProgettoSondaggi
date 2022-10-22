@@ -94,6 +94,32 @@ routerSondaggi.get("/getDestinatari/:id", async (req, res) => {
     }
 })
 
+//Prende la domanda nel dettaglio
+routerSondaggi.get("/getDomandaById/:id", async(req, res) =>{
+    Sondaggi.init();
+    try {
+        const idDomanda=new ObjectId(req.params.id);
+        const sondaggioTrovato = await Sondaggi.findOne({
+            "domande": {$elemMatch:{
+                _id: idDomanda
+            }}
+        })
+        const arrayDomande = sondaggioTrovato.domande;
+        let domandaTrovata = "";
+
+        arrayDomande.forEach(d => {
+            if(idDomanda == d.id){
+                domandaTrovata = d;
+            }
+        });
+
+        console.log(domandaTrovata);
+        res.send(domandaTrovata);
+
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
+})
 
 
 module.exports = routerSondaggi;

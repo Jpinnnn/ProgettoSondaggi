@@ -59,6 +59,7 @@ app.get('/', function (req, res) {
     '------------------------------------------Domande---------------------------------------'+
     '<br></br>'+
     "[GET] /API/getDomandeByIdSondaggio => prende la lista delle domande  tramite ID del sondaggio"+'<br></br>'+
+    "[GET] /API/getDomandaById => prende la domanda tramite ID "+'<br></br>'+
     "[PATCH] /API/aggiungiDomanda {/id sondaggio appena creato} => inserisce una nuova domanda SENZA risposte"+'<br></br>'+
     "[PATCH] /API/aggiungiDomandaCompleta {/id sondaggio appena creato} => inserisce una nuova domanda CON ARRAY di risposte"+'<br></br>'+
     "[PATCH] /API/updateDomandaById => modifica il testo, la tipologia e l'indice della domanda tramite l'ID"+'<br></br>'+

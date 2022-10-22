@@ -121,7 +121,9 @@ routerSondaggi.patch("/updateDestinatarioById/:id", async (req, res) => {
     try {
         const idDestinatario = new ObjectId(req.params.id);
         const newEmail = req.body.email;
-        const sondaggioTrovato = await Sondaggi.findOne({ "emailDestinatari": { $elemMatch: { _id: idDestinatario } } });
+        const sondaggioTrovato = await Sondaggi.findOne(
+            { "emailDestinatari": { $elemMatch: { _id: idDestinatario } } }
+        );
         const idSondaggio = new ObjectId(sondaggioTrovato.id);
         //const destinatari = sondaggioTrovato.emailDestinatari;
 
@@ -367,7 +369,7 @@ routerSondaggi.patch("/deleteRispostaById/:id", async (req, res) => {
                 }
             }
         )
-        
+
         console.log(eliminaRisposta);
         res.send(eliminaRisposta);
 

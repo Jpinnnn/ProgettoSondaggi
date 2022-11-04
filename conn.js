@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbConnString = "mongodb://localhost:27017/dbSondaggi";
+const dbConnString = "mongodb://127.0.0.1:27017/dbSondaggi";
 //const dbConnString = "mongodb://mongo:27017/dbSondaggi";     //Per docker soltanto
 
 function connectToDb() {

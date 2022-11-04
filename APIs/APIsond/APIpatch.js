@@ -17,6 +17,8 @@ routerSondaggi.patch("/updateSondaggioById/:id", async (req, res) => {
         const newDataInizio = new Date(req.body.dataInizio);
         const newDataFine = new Date(req.body.dataFine);
         const newEmailCreatore = req.body.emailCreatore;
+        const newStato = req.body.stato;
+
 
         const nuovoSondaggio = await Sondaggi.updateOne(
             { _id: idSondaggio },
@@ -27,7 +29,8 @@ routerSondaggi.patch("/updateSondaggioById/:id", async (req, res) => {
                     "descrizione": newDescrizione,
                     "dataInizio": newDataInizio,
                     "dataFine": newDataFine,
-                    "emailCreatore": newEmailCreatore
+                    "emailCreatore": newEmailCreatore,
+                    "stato": newStato
                 }
             }
         )

@@ -1,0 +1,201 @@
+[{
+  "_id": {
+    "$oid": "636e97d79bfade590f90291c"
+  },
+  "titolo": "Sondaggio soddisfazione acquisto.",
+  "sottotitolo": "Comprerai ancora da noi?",
+  "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di soddisfazione del cliente.",
+  "dataInizio": "2022-09-01",
+  "dataFine": "2022-12-31",
+  "stato": "aperto",
+  "emailCreatore": "pippo@ti.it",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it"
+    },
+    {
+      "email": "vgvg@ti.it"
+    },
+    {
+      "email": "cscs@ti.it"
+    },
+    {
+      "email": "prpr@ti.it"
+    },
+    {
+      "email": "mgmg@ti.it"
+    }
+  ],
+  "domande": [
+    {
+      "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
+      "tipologia": "Radio",
+      "indice": 0,
+      "risposte": [
+        {
+          "risposta": "Poco"
+        },
+        {
+          "risposta": "Abbastanza"
+        },
+        {
+          "risposta": "Molto"
+        },
+        {
+          "risposta": "Moltissimo"
+        }
+      ]
+    },
+    {
+      "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
+      "tipologia": "Radio",
+      "indice": 1,
+      "risposte": [
+        {
+          "risposta": "Poco"
+        },
+        {
+          "risposta": "Abbastanza"
+        },
+        {
+          "risposta": "Molto"
+        },
+        {
+          "risposta": "Moltissimo"
+        }
+      ]
+    },
+    {
+      "testo": "Quali sono gli aspetti che le piacciono di questo prodotto?",
+      "tipologia": "Checkbox",
+      "indice": 2,
+      "risposte": [
+        {
+          "risposta": "Tecnologico"
+        },
+        {
+          "risposta": "Alla moda"
+        },
+        {
+          "risposta": "Classico"
+        },
+        {
+          "risposta": "Economico"
+        },
+        {
+          "risposta": "Bello"
+        }
+      ]
+    },
+    {
+      "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
+      "tipologia": "Risposta libera",
+      "indice": 3,
+      "risposte": [
+        {
+          "risposta": ""
+        }
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "636e98639bfade590f90291d"
+  },
+  "titolo": "Sondaggio soddisfazione situazione lavorativa.",
+  "sottotitolo": "Ti trovi bene con noi?",
+  "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di felicità del dipendente.",
+  "dataInizio": "2022-10-01",
+  "dataFine": "2022-11-30",
+  "stato": "bozza",
+  "emailCreatore": "pippo@ti.it",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it"
+    },
+    {
+      "email": "vgvg@ti.it"
+    },
+    {
+      "email": "cscs@ti.it"
+    },
+    {
+      "email": "prpr@ti.it"
+    },
+    {
+      "email": "mgmg@ti.it"
+    }
+  ],
+  "domande": [
+    {
+      "testo": "Quanto ti rende felice il tuo lavoro?",
+      "tipologia": "Radio",
+      "indice": 0,
+      "risposte": [
+        {
+          "risposta": "Poco"
+        },
+        {
+          "risposta": "Abbastanza"
+        },
+        {
+          "risposta": "Molto"
+        },
+        {
+          "risposta": "Moltissimo"
+        }
+      ]
+    },
+    {
+      "testo": "Sei felice del rapporto di lavoro con i tuoi colleghi?",
+      "tipologia": "Radio",
+      "indice": 1,
+      "risposte": [
+        {
+          "risposta": "Poco"
+        },
+        {
+          "risposta": "Abbastanza"
+        },
+        {
+          "risposta": "Molto"
+        },
+        {
+          "risposta": "Moltissimo"
+        }
+      ]
+    },
+    {
+      "testo": "Quali sono gli aspetti che le piacciono di questo lavoro?",
+      "tipologia": "Checkbox",
+      "indice": 2,
+      "risposte": [
+        {
+          "risposta": "Tecnologico"
+        },
+        {
+          "risposta": "Alla moda"
+        },
+        {
+          "risposta": "Classico"
+        },
+        {
+          "risposta": "Giovanile"
+        },
+        {
+          "risposta": "Bello"
+        }
+      ]
+    },
+    {
+      "testo": "C’è qualcosa che possa migliorare la qualità del tuo lavoro?",
+      "tipologia": "Risposta libera",
+      "indice": 3,
+      "risposte": [
+        {
+          "risposta": ""
+        }
+      ]
+    }
+  ]
+}]

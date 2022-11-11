@@ -1,0 +1,193 @@
+[{
+  "_id": {
+    "$oid": "636e97d79bfade590f90291c"
+  },
+  "titolo": "Sondaggio soddisfazione acquisto.",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Molto"
+            }
+          ]
+        },
+        {
+          "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Moltissimo"
+            }
+          ]
+        },
+        {
+          "testo": "Quali sono gli aspetti che le piacciono di questo prodotto?",
+          "tipologia": "Checkbox",
+          "risposte": [
+            {
+              "risposta": "Tecnologico"
+            },
+            {
+              "risposta": "Alla moda"
+            }
+          ]
+        },
+        {
+          "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
+          "tipologia": "Risposta libera",
+          "risposte": [
+            {
+              "risposta": "Il prodotto è semplicemente fantastico!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "vgvg@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Moltissimo"
+            }
+          ]
+        },
+        {
+          "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Abbastanza"
+            }
+          ]
+        },
+        {
+          "testo": "Quali sono gli aspetti che le piacciono di questo prodotto?",
+          "tipologia": "Checkbox",
+          "risposte": [
+            {
+              "risposta": "Classico"
+            },
+            {
+              "risposta": "Economico"
+            }
+          ]
+        },
+        {
+          "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
+          "tipologia": "Risposta libera",
+          "risposte": [
+            {
+              "risposta": "Il prodotto mi piace e il servizio è soddisfacente!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "cscs@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Poco"
+            }
+          ]
+        },
+        {
+          "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
+          "tipologia": "Risposta libera",
+          "risposte": []
+        }
+      ]
+    },
+    {
+      "email": "prpr@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Poco"
+            }
+          ]
+        },
+        {
+          "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
+          "tipologia": "Risposta libera",
+          "risposte": []
+        }
+      ]
+    },
+    {
+      "email": "mgmg@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Abbastanza"
+            }
+          ]
+        },
+        {
+          "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Abbastanza"
+            }
+          ]
+        },
+        {
+          "testo": "Quali sono gli aspetti che le piacciono di questo prodotto?",
+          "tipologia": "Checkbox",
+          "risposte": [
+            {
+              "risposta": "Economico"
+            },
+            {
+              "risposta": "Bello"
+            }
+          ]
+        },
+        {
+          "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
+          "tipologia": "Risposta libera",
+          "risposte": [
+            {
+              "risposta": "Il prodotto è economico e molto bello!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}]

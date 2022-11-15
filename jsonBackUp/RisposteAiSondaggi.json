@@ -1,6 +1,6 @@
 [{
   "_id": {
-    "$oid": "636e97d79bfade590f90291c"
+    "$oid": "63737f3a8a83d7f73e1ee66e"
   },
   "titolo": "Sondaggio soddisfazione acquisto.",
   "emailDestinatari": [
@@ -186,6 +186,245 @@
               "risposta": "Il prodotto è economico e molto bello!"
             }
           ]
+        }
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63737f3a8a83d7f73e1ee670"
+  },
+  "titolo": "Sondaggio colori.",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quale tra i seguenti colori ti piace di più?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Verde"
+            }
+          ]
+        },
+        {
+          "testo": "Perchè ti piace?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Rispecchia i colori della natura."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "vgvg@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quale tra i seguenti colori ti piace di più?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Verde"
+            }
+          ]
+        },
+        {
+          "testo": "Perchè ti piace?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Rispecchia i colori della natura."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "cscs@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quale tra i seguenti colori ti piace di più?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Blu"
+            }
+          ]
+        },
+        {
+          "testo": "Perchè ti piace?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Rispecchia i colori della natura."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "prpr@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quale tra i seguenti colori ti piace di più?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Rosso"
+            }
+          ]
+        },
+        {
+          "testo": "Perchè ti piace?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Molto luminoso."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "mgmg@ti.it",
+      "completato": true,
+      "domande": [
+        {
+          "testo": "Quale tra i seguenti colori ti piace di più?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Nero"
+            }
+          ]
+        },
+        {
+          "testo": "Perchè ti piace?",
+          "tipologia": "Radio",
+          "risposte": [
+            {
+              "risposta": "Molto scuro."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63737f3a8a83d7f73e1ee671"
+  },
+  "titolo": "Sondaggio soddisfazione acquisto.",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Che tipo di prodotto hai acquistato?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Sei felice del tuo acquisto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
+          "tipologia": "Checkbox",
+          "risposte": []
+        }
+      ]
+    },
+    {
+      "email": "vgvg@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Che tipo di prodotto hai acquistato?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Sei felice del tuo acquisto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
+          "tipologia": "Checkbox",
+          "risposte": []
+        }
+      ]
+    },
+    {
+      "email": "cscs@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Che tipo di prodotto hai acquistato?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Sei felice del tuo acquisto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
+          "tipologia": "Checkbox",
+          "risposte": []
+        }
+      ]
+    },
+    {
+      "email": "prpr@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Che tipo di prodotto hai acquistato?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Sei felice del tuo acquisto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
+          "tipologia": "Checkbox",
+          "risposte": []
+        }
+      ]
+    },
+    {
+      "email": "mgmg@ti.it",
+      "completato": false,
+      "domande": [
+        {
+          "testo": "Che tipo di prodotto hai acquistato?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Sei felice del tuo acquisto?",
+          "tipologia": "Radio",
+          "risposte": []
+        },
+        {
+          "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
+          "tipologia": "Checkbox",
+          "risposte": []
         }
       ]
     }

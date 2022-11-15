@@ -75,7 +75,7 @@ app.get('/', function (req, res) {
         
         "----------------------------------------RisposteAiSondaggi---------------------------------------" +
         '<br></br>' +
-        "[GET] /API/getCompletiById/:idSondaggio => ottiene il numero di sondaggi completi rispetto al totale passando l'ID del sondaggio" + '<br></br>' +
+        "[GET] /API/getIncompletiById/:idSondaggio => ottiene il numero di sondaggi completi rispetto al totale passando l'ID del sondaggio" + '<br></br>' +
 
         '')
 

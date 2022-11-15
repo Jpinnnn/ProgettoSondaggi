@@ -9,7 +9,7 @@ const routerStats = express.Router();
 
 //controlla quanti questionari risultano completi sul totale
 //restituisce un json con le statistiche di quante persone hanno completato il sondaggio
-routerStats.get('/getCompletiById/:id', async (req, res) => {
+routerStats.get('/getIncompletiById/:id', async (req, res) => {
 
     RisposteAiSondaggi.init();
 

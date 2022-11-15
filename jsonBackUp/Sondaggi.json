@@ -1,9 +1,9 @@
 [{
   "_id": {
-    "$oid": "636e97d79bfade590f90291c"
+    "$oid": "63737f3a8a83d7f73e1ee66e"
   },
   "titolo": "Sondaggio soddisfazione acquisto.",
-  "sottotitolo": "Comprerai ancora da noi?",
+  "sottotitolo": "Sondaggio incompleto",
   "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di soddisfazione del cliente.",
   "dataInizio": "2022-09-01",
   "dataFine": "2022-12-31",
@@ -100,7 +100,7 @@
   ]
 },{
   "_id": {
-    "$oid": "636e98639bfade590f90291d"
+    "$oid": "63737f3a8a83d7f73e1ee66f"
   },
   "titolo": "Sondaggio soddisfazione situazione lavorativa.",
   "sottotitolo": "Ti trovi bene con noi?",
@@ -194,6 +194,179 @@
       "risposte": [
         {
           "risposta": ""
+        }
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63737f3a8a83d7f73e1ee670"
+  },
+  "titolo": "Sondaggio colori.",
+  "sottotitolo": "Sondaggio completato",
+  "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il colore preferito del dipendente.",
+  "dataInizio": "2022-10-01",
+  "dataFine": "2022-10-31",
+  "stato": "chiuso",
+  "emailCreatore": "pippo@ti.it",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it"
+    },
+    {
+      "email": "vgvg@ti.it"
+    },
+    {
+      "email": "cscs@ti.it"
+    },
+    {
+      "email": "prpr@ti.it"
+    },
+    {
+      "email": "mgmg@ti.it"
+    }
+  ],
+  "domande": [
+    {
+      "testo": "Quale tra i seguenti colori ti piace di più?",
+      "tipologia": "Radio",
+      "indice": 0,
+      "risposte": [
+        {
+          "risposta": "Rosso"
+        },
+        {
+          "risposta": "Giallo"
+        },
+        {
+          "risposta": "Blu"
+        },
+        {
+          "risposta": "Verde"
+        },
+        {
+          "risposta": "Viola"
+        },
+        {
+          "risposta": "Arancione"
+        },
+        {
+          "risposta": "Bianco"
+        },
+        {
+          "risposta": "Nero"
+        }
+      ]
+    },
+    {
+      "testo": "Perchè ti piace?",
+      "tipologia": "Radio",
+      "indice": 1,
+      "risposte": [
+        {
+          "risposta": "Rispecchia i colori della natura."
+        },
+        {
+          "risposta": "Accattivante."
+        },
+        {
+          "risposta": "Molto luminoso"
+        },
+        {
+          "risposta": "Molto scuro"
+        }
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63737f3a8a83d7f73e1ee671"
+  },
+  "titolo": "Sondaggio prodotto.",
+  "sottotitolo": "Sondaggio appena creato",
+  "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di soddisfazione dell'acquisto.",
+  "dataInizio": "2022-10-01",
+  "dataFine": "2023-06-30",
+  "stato": "aperto",
+  "emailCreatore": "pippo@ti.it",
+  "emailDestinatari": [
+    {
+      "email": "gpgp@ti.it"
+    },
+    {
+      "email": "vgvg@ti.it"
+    },
+    {
+      "email": "cscs@ti.it"
+    },
+    {
+      "email": "prpr@ti.it"
+    },
+    {
+      "email": "mgmg@ti.it"
+    }
+  ],
+  "domande": [
+    {
+      "testo": "Che tipo di prodotto hai acquistato?",
+      "tipologia": "Radio",
+      "indice": 0,
+      "risposte": [
+        {
+          "risposta": "Telefonia"
+        },
+        {
+          "risposta": "Informatica"
+        },
+        {
+          "risposta": "Libri"
+        },
+        {
+          "risposta": "Cucina"
+        },
+        {
+          "risposta": "Multimedia"
+        },
+        {
+          "risposta": "Casa"
+        }
+      ]
+    },
+    {
+      "testo": "Sei felice del tuo acquisto?",
+      "tipologia": "Radio",
+      "indice": 1,
+      "risposte": [
+        {
+          "risposta": "Poco"
+        },
+        {
+          "risposta": "Abbastanza"
+        },
+        {
+          "risposta": "Molto"
+        },
+        {
+          "risposta": "Moltissimo"
+        }
+      ]
+    },
+    {
+      "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
+      "tipologia": "Checkbox",
+      "indice": 2,
+      "risposte": [
+        {
+          "risposta": "Tecnologico"
+        },
+        {
+          "risposta": "Alla moda"
+        },
+        {
+          "risposta": "Semplicità"
+        },
+        {
+          "risposta": "Giovanile"
         }
       ]
     }

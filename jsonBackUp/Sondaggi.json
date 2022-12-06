@@ -1,374 +1,671 @@
 [{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee66e"
+    "$oid": "6374c9a36e703926edf6c2c1"
   },
   "titolo": "Sondaggio soddisfazione acquisto.",
   "sottotitolo": "Sondaggio incompleto",
   "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di soddisfazione del cliente.",
-  "dataInizio": "2022-09-01",
-  "dataFine": "2022-12-31",
+  "dataInizio": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "dataFine": {
+    "$date": {
+      "$numberLong": "1672444800000"
+    }
+  },
   "stato": "aperto",
   "emailCreatore": "pippo@ti.it",
   "emailDestinatari": [
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2aa"
+      },
       "email": "gpgp@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2ab"
+      },
       "email": "vgvg@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2ac"
+      },
       "email": "cscs@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2ad"
+      },
       "email": "prpr@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2ae"
+      },
       "email": "mgmg@ti.it"
     }
   ],
   "domande": [
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2af"
+      },
       "testo": "Quanto è rimasto soddisfatto del prodotto acquistato?",
       "tipologia": "Radio",
       "indice": 0,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b0"
+          },
           "risposta": "Poco"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b1"
+          },
           "risposta": "Abbastanza"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b2"
+          },
           "risposta": "Molto"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b3"
+          },
           "risposta": "Moltissimo"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2b4"
+      },
       "testo": "È rimasto soddisfatto del servizio che ha accompagnato il prodotto?",
       "tipologia": "Radio",
       "indice": 1,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b5"
+          },
           "risposta": "Poco"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b6"
+          },
           "risposta": "Abbastanza"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b7"
+          },
           "risposta": "Molto"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2b8"
+          },
           "risposta": "Moltissimo"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2b9"
+      },
       "testo": "Quali sono gli aspetti che le piacciono di questo prodotto?",
       "tipologia": "Checkbox",
       "indice": 2,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2ba"
+          },
           "risposta": "Tecnologico"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2bb"
+          },
           "risposta": "Alla moda"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2bc"
+          },
           "risposta": "Classico"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2bd"
+          },
           "risposta": "Economico"
         },
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2be"
+          },
           "risposta": "Bello"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9a36e703926edf6c2bf"
+      },
       "testo": "C’è qualcosa che non le è piaciuto del nostro prodotto /servizio/azienda? Descriva brevemente la sua esperienza.",
       "tipologia": "Risposta libera",
       "indice": 3,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9a36e703926edf6c2c0"
+          },
           "risposta": ""
         }
       ]
     }
-  ]
+  ],
+  "__v": 0
 },{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee66f"
+    "$oid": "6374c9ac6e703926edf6c2da"
   },
   "titolo": "Sondaggio soddisfazione situazione lavorativa.",
   "sottotitolo": "Ti trovi bene con noi?",
   "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di felicità del dipendente.",
-  "dataInizio": "2022-10-01",
-  "dataFine": "2022-11-30",
+  "dataInizio": {
+    "$date": {
+      "$numberLong": "1664582400000"
+    }
+  },
+  "dataFine": {
+    "$date": {
+      "$numberLong": "1669766400000"
+    }
+  },
   "stato": "bozza",
   "emailCreatore": "pippo@ti.it",
   "emailDestinatari": [
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2c3"
+      },
       "email": "gpgp@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2c4"
+      },
       "email": "vgvg@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2c5"
+      },
       "email": "cscs@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2c6"
+      },
       "email": "prpr@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2c7"
+      },
       "email": "mgmg@ti.it"
     }
   ],
   "domande": [
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2c8"
+      },
       "testo": "Quanto ti rende felice il tuo lavoro?",
       "tipologia": "Radio",
       "indice": 0,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2c9"
+          },
           "risposta": "Poco"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2ca"
+          },
           "risposta": "Abbastanza"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2cb"
+          },
           "risposta": "Molto"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2cc"
+          },
           "risposta": "Moltissimo"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2cd"
+      },
       "testo": "Sei felice del rapporto di lavoro con i tuoi colleghi?",
       "tipologia": "Radio",
       "indice": 1,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2ce"
+          },
           "risposta": "Poco"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2cf"
+          },
           "risposta": "Abbastanza"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d0"
+          },
           "risposta": "Molto"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d1"
+          },
           "risposta": "Moltissimo"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2d2"
+      },
       "testo": "Quali sono gli aspetti che le piacciono di questo lavoro?",
       "tipologia": "Checkbox",
       "indice": 2,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d3"
+          },
           "risposta": "Tecnologico"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d4"
+          },
           "risposta": "Alla moda"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d5"
+          },
           "risposta": "Classico"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d6"
+          },
           "risposta": "Giovanile"
         },
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d7"
+          },
           "risposta": "Bello"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9ac6e703926edf6c2d8"
+      },
       "testo": "C’è qualcosa che possa migliorare la qualità del tuo lavoro?",
       "tipologia": "Risposta libera",
       "indice": 3,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9ac6e703926edf6c2d9"
+          },
           "risposta": ""
         }
       ]
     }
-  ]
+  ],
+  "__v": 0
 },{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee670"
+    "$oid": "6374c9b36e703926edf6c2ef"
   },
   "titolo": "Sondaggio colori.",
   "sottotitolo": "Sondaggio completato",
   "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il colore preferito del dipendente.",
-  "dataInizio": "2022-10-01",
-  "dataFine": "2022-10-31",
+  "dataInizio": {
+    "$date": {
+      "$numberLong": "1664582400000"
+    }
+  },
+  "dataFine": {
+    "$date": {
+      "$numberLong": "1667174400000"
+    }
+  },
   "stato": "chiuso",
   "emailCreatore": "pippo@ti.it",
   "emailDestinatari": [
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2dc"
+      },
       "email": "gpgp@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2dd"
+      },
       "email": "vgvg@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2de"
+      },
       "email": "cscs@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2df"
+      },
       "email": "prpr@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2e0"
+      },
       "email": "mgmg@ti.it"
     }
   ],
   "domande": [
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2e1"
+      },
       "testo": "Quale tra i seguenti colori ti piace di più?",
       "tipologia": "Radio",
       "indice": 0,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e2"
+          },
           "risposta": "Rosso"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e3"
+          },
           "risposta": "Giallo"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e4"
+          },
           "risposta": "Blu"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e5"
+          },
           "risposta": "Verde"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e6"
+          },
           "risposta": "Viola"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e7"
+          },
           "risposta": "Arancione"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e8"
+          },
           "risposta": "Bianco"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2e9"
+          },
           "risposta": "Nero"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9b36e703926edf6c2ea"
+      },
       "testo": "Perchè ti piace?",
       "tipologia": "Radio",
       "indice": 1,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2eb"
+          },
           "risposta": "Rispecchia i colori della natura."
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2ec"
+          },
           "risposta": "Accattivante."
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2ed"
+          },
           "risposta": "Molto luminoso"
         },
         {
+          "_id": {
+            "$oid": "6374c9b36e703926edf6c2ee"
+          },
           "risposta": "Molto scuro"
         }
       ]
     }
-  ]
+  ],
+  "__v": 0
 },{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee671"
+    "$oid": "6374c9b96e703926edf6c307"
   },
   "titolo": "Sondaggio prodotto.",
   "sottotitolo": "Sondaggio appena creato",
   "descrizione": "L'obiettivo del sondaggio è quello di verificare quale sia il grado di soddisfazione dell'acquisto.",
-  "dataInizio": "2022-10-01",
-  "dataFine": "2023-06-30",
+  "dataInizio": {
+    "$date": {
+      "$numberLong": "1664582400000"
+    }
+  },
+  "dataFine": {
+    "$date": {
+      "$numberLong": "1688083200000"
+    }
+  },
   "stato": "aperto",
   "emailCreatore": "pippo@ti.it",
   "emailDestinatari": [
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2f1"
+      },
       "email": "gpgp@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2f2"
+      },
       "email": "vgvg@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2f3"
+      },
       "email": "cscs@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2f4"
+      },
       "email": "prpr@ti.it"
     },
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2f5"
+      },
       "email": "mgmg@ti.it"
     }
   ],
   "domande": [
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2f6"
+      },
       "testo": "Che tipo di prodotto hai acquistato?",
       "tipologia": "Radio",
       "indice": 0,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2f7"
+          },
           "risposta": "Telefonia"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2f8"
+          },
           "risposta": "Informatica"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2f9"
+          },
           "risposta": "Libri"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2fa"
+          },
           "risposta": "Cucina"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2fb"
+          },
           "risposta": "Multimedia"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2fc"
+          },
           "risposta": "Casa"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c2fd"
+      },
       "testo": "Sei felice del tuo acquisto?",
       "tipologia": "Radio",
       "indice": 1,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2fe"
+          },
           "risposta": "Poco"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c2ff"
+          },
           "risposta": "Abbastanza"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c300"
+          },
           "risposta": "Molto"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c301"
+          },
           "risposta": "Moltissimo"
         }
       ]
     },
     {
+      "_id": {
+        "$oid": "6374c9b96e703926edf6c302"
+      },
       "testo": "Quali sono gli aspetti che ti piacciono di questo acquisto?",
       "tipologia": "Checkbox",
       "indice": 2,
       "risposte": [
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c303"
+          },
           "risposta": "Tecnologico"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c304"
+          },
           "risposta": "Alla moda"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c305"
+          },
           "risposta": "Semplicità"
         },
         {
+          "_id": {
+            "$oid": "6374c9b96e703926edf6c306"
+          },
           "risposta": "Giovanile"
         }
       ]
     }
-  ]
+  ],
+  "__v": 0
 }]

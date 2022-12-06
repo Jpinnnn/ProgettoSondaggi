@@ -1,6 +1,6 @@
 [{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee66e"
+    "$oid": "6374c9a36e703926edf6c2c1"
   },
   "titolo": "Sondaggio soddisfazione acquisto.",
   "emailDestinatari": [
@@ -192,7 +192,7 @@
   ]
 },{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee670"
+    "$oid": "6374c9b36e703926edf6c2ef"
   },
   "titolo": "Sondaggio colori.",
   "emailDestinatari": [
@@ -319,7 +319,7 @@
   ]
 },{
   "_id": {
-    "$oid": "63737f3a8a83d7f73e1ee671"
+    "$oid": "6374c9b96e703926edf6c307"
   },
   "titolo": "Sondaggio soddisfazione acquisto.",
   "emailDestinatari": [

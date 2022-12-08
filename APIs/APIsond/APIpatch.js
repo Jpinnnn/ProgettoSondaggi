@@ -48,7 +48,9 @@ routerSondaggi.patch("/deleteDomandaById/:id", async (req, res) => {
     try {
         const idDomanda = new ObjectId(req.params.id);
         //Trovo il sondaggio con quella domanda specifica
-        const sondaggioTrovato = await Sondaggi.findOne({ "domande": { $elemMatch: { _id: idDomanda } } });
+        const sondaggioTrovato = await Sondaggi.findOne(
+            { "domande": { $elemMatch: { _id: idDomanda } } }
+        );
         const idSondaggio = new ObjectId(sondaggioTrovato.id);
 
         //const arrayDomande = sondaggioTrovato.domande;
@@ -69,7 +71,9 @@ routerSondaggi.patch("/updateDomandaById/:id", async (req, res) => {
     Sondaggi.init();
     try {
         const idDomanda = new ObjectId(req.params.id);
-        const sondaggioTrovato = await Sondaggi.findOne({ "domande": { $elemMatch: { _id: idDomanda } } });
+        const sondaggioTrovato = await Sondaggi.findOne(
+             { "domande": { $elemMatch: { _id: idDomanda } } }
+        );
         const idSondaggio = new ObjectId(sondaggioTrovato.id);
         //const arrayDomande = sondaggioTrovato.domande;
 
@@ -151,14 +155,12 @@ routerSondaggi.patch("/aggiungiDomanda/:id", async (req, res) => {
         const newTesto = req.body.testo;
         const newTipologia = req.body.tipologia;
         const newIndice = req.body.indice;
-
         const newRisposte = new Array();
         console.log(newRisposte);
 
         const nuovaDomanda = await Sondaggi.updateOne(
             { _id: idSondaggio },
-            {
-                $push: {
+            {   $push: {
                     "domande": {
                         _id: new ObjectId(),
                         testo: newTesto,
@@ -182,7 +184,6 @@ routerSondaggi.patch("/aggiungiDomandaCompleta/:id", async (req, res) => {
     Sondaggi.init();
     try {
         const idSondaggio = new ObjectId(req.params.id);
-        const idDomanda = new ObjectId();
         const newTesto = req.body.testo;
         const newTipologia = req.body.tipologia;
         const newIndice = req.body.indice;
@@ -196,7 +197,6 @@ routerSondaggi.patch("/aggiungiDomandaCompleta/:id", async (req, res) => {
             let risp = { _id: idRisposta, "risposta": rispAttuale };
             newRisposte2.push(risp);
         });
-
         newRisposte = newRisposte2;
 
         const nuovaDomanda = await Sondaggi.updateOne(

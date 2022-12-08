@@ -1,33 +1,34 @@
 const express = require("express")
 const cors = require('cors');
 const connectToDb = require('./conn.js');
+const app = express();
 
 const APIgetS = require('./APIs/APIsond/APIget.js');
 const APIpostS = require('./APIs/APIsond/APIpost.js');
 const APIpatchS = require('./APIs/APIsond/APIpatch.js');
 const APIdeleteS = require('./APIs/APIsond/APIdelete.js');
+
+app.use('/API', APIgetS);
+app.use('/API', APIpostS);
+app.use('/API', APIpatchS);
+app.use('/API', APIdeleteS);
+
 const APIstats = require('./APIs/APIstats/stats.js')
+
+app.use('/API', APIstats);
 
 // const APIgetR = require('./APIs/APIrisp/APIget');
 // const APIpostR = require('./APIs/APIrisp/APIpost');
 // const APIpatchR = require('./APIs/APIrisp/APIpatch');
 // const APIdeleteR = require('./APIs/APIrisp/APIdelete');
 
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.use('/API', APIgetS);
-app.use('/API', APIpostS);
-app.use('/API', APIpatchS);
-app.use('/API', APIdeleteS);
-app.use('/API', APIstats);
-
 // app.use('/API', APIgetR);
 // app.use('/API', APIpostR);
 // app.use('/API', APIpatchR);
 // app.use('/API', APIdeleteR);
+
+app.use(cors());
+app.use(express.json());
 
 const port = 3000;
 connectToDb();

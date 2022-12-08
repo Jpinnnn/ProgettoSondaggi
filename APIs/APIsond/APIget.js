@@ -4,7 +4,6 @@ const { Sondaggi } = require('../../modelli/Sondaggi');
 
 const routerSondaggi = express.Router();
 
-
 //------------------------------GETs--------------------------------------//
 
 //Prende tutti i sondaggi completi dal db --OK
@@ -60,7 +59,9 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
         //const idDomanda = new ObjectId(req.params["id"]);
         const idDomanda = new ObjectId(req.params.id);
 
-        const sondaggio = await Sondaggi.findOne({ "domande": { $elemMatch: { _id: idDomanda } } })
+        const sondaggio = await Sondaggi.findOne(
+            { "domande": { $elemMatch: { _id: idDomanda } } }
+        )
 
         let risposte;
         sondaggio.domande.forEach(d => {
@@ -68,7 +69,6 @@ routerSondaggi.get("/getRisposteByIdDomanda/:id", async (req, res) => {
                 risposte = d.risposte;
             }
         });
-
 
         console.log(risposte);
         res.send(risposte);

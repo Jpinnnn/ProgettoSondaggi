@@ -20,9 +20,11 @@ const APIstats = require('./APIs/APIstats/stats.js')
 
 app.use('/API', APIstats);
 
-const APIemail = require('./APIs/APIemail/APIget.js')
+const APIgetEmail = require('./APIs/APIemail/APIget.js')
+const APIpostEmail = require('./APIs/APIemail/APIpost.js')
 
-app.use('/API', APIemail);
+app.use('/API', APIgetEmail);
+app.use('/API', APIpostEmail);
 
 // const APIgetR = require('./APIs/APIrisp/APIget');
 // const APIpostR = require('./APIs/APIrisp/APIpost');

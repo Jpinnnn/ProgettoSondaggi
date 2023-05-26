@@ -18,6 +18,7 @@ routerEmail.post('/postEmailList', async(req, res)=>{
 routerEmail.post('/postAdminList', async(req, res)=>{
     try {
         
+        const ti = "@telematicainformatica.it"
 
         const nuovaEmail = new EmailList({
             _id: new ObjectId,
@@ -26,16 +27,27 @@ routerEmail.post('/postAdminList', async(req, res)=>{
             admin: true
         })
 
-        // if(Object.keys(req.body.email).length === 0){
-        //     console.log("email errata")
-        //     return res.send("email errata")
+
+        if(!req.body.email || !req.body.password ||
+            req.body.email == "''" || req.body.email == '""' ||
+            req.body.password == "''" || req.body.password == '""'
+            )
+        {
+            return res.send("nessuna email o password inserita")
+        }
+
+        //Se l'email non contiene @telematicainformatica.it
+        if(!nuovaEmail.email.includes(ti)){
+            return res.send("email non valida")
+        }
+        
+        // if(!req.body.email){
+        //     return res.send("nessuna email inserita")
+        // }
+        // if(!req.body.password){
+        //     return res.send("nessuna password inserita")
         // }
 
-        // console.log(Object.keys(req.body.email))
-
-        if(!req.body.email){
-             return res.send("nessuna email inserita")
-        }
         await nuovaEmail.save();
 
         console.log(nuovaEmail)

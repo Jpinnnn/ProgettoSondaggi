@@ -83,6 +83,11 @@ app.get('/', function (req, res) {
         "----------------------------------------RisposteAiSondaggi---------------------------------------" +
         '<br></br>' +
         "[GET] /API/getIncompletiById/:idSondaggio => ottiene il numero di sondaggi completi rispetto al totale passando l'ID del sondaggio" + '<br></br>' +
+        
+        "----------------------------------------EmailList Login---------------------------------------" +
+        '<br></br>' +
+        "[GET] /API/Login => Login" + '<br></br>' +
+        "[POST] /API/PostEmailList => crea un nuovo utente inserendo email, password e tipo di utente (a:true/u:false)" + '<br></br>' +
 
         '')
 

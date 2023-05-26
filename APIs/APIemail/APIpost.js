@@ -7,15 +7,9 @@ const routerEmail = express.Router();
 
 //APIs qua
 
-//inserisce un utente qualsiasi
+//inserisce un utente qualsiasi passando email, password e tipo di utente: true = admin, false = dipendente
+
 routerEmail.post('/postEmailList', async(req, res)=>{
-
-})
-
-
-
-//inserisce un amministratore
-routerEmail.post('/postAdminList', async(req, res)=>{
     try {
         
         const ti = "@telematicainformatica.it"
@@ -24,7 +18,7 @@ routerEmail.post('/postAdminList', async(req, res)=>{
             _id: new ObjectId,
             email: req.body.email,
             password: req.body.password,
-            admin: true
+            admin: req.body.admin
         })
 
         if(!nuovaEmail.email || !nuovaEmail.password ||
@@ -39,6 +33,9 @@ routerEmail.post('/postAdminList', async(req, res)=>{
         if(!nuovaEmail.email.includes(ti)){
             return res.send("email non valida")
         }
+
+        // // // // applicare filtro che verifica la presenza di una email già presente
+        // // // // verificare che la password abbia almeno 8 caratteri
         
         await nuovaEmail.save();
 

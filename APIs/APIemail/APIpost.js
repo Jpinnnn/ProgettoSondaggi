@@ -27,11 +27,10 @@ routerEmail.post('/postAdminList', async(req, res)=>{
             admin: true
         })
 
-
-        if(!req.body.email || !req.body.password ||
-            req.body.email == "''" || req.body.email == '""' ||
-            req.body.password == "''" || req.body.password == '""'
-            )
+        if(!nuovaEmail.email || !nuovaEmail.password ||
+            nuovaEmail.email == "''" || nuovaEmail.email == '""' ||
+            nuovaEmail.password == "''" || nuovaEmail.password == '""' ||
+            nuovaEmail.email.includes(" ") || nuovaEmail.password.includes(" "))
         {
             return res.send("nessuna email o password inserita")
         }
@@ -41,13 +40,6 @@ routerEmail.post('/postAdminList', async(req, res)=>{
             return res.send("email non valida")
         }
         
-        // if(!req.body.email){
-        //     return res.send("nessuna email inserita")
-        // }
-        // if(!req.body.password){
-        //     return res.send("nessuna password inserita")
-        // }
-
         await nuovaEmail.save();
 
         console.log(nuovaEmail)

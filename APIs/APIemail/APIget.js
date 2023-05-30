@@ -1,7 +1,7 @@
 const express = require('express');
 const ObjectId = require('mongodb').ObjectId;
 const { EmailList } = require('../../modelli/EmailList');
-const session = require('node-sessionstorage')
+// const session = require('node-sessionstorage')
 
 const routerEmail = express.Router();
 
@@ -25,10 +25,10 @@ routerEmail.get("/Login", async (req, res) =>{
 
         console.log (emailTrovata);
         
-        session.setItem("sessionEmail", emailTrovata.email)
-        session.setItem("sessionAdmin", emailTrovata.admin)
-        console.log (session.getItem("sessionEmail"));
-        console.log (session.getItem("sessionAdmin"));
+        // session.setItem("sessionEmail", emailTrovata.email)
+        // session.setItem("sessionAdmin", emailTrovata.admin)
+        // console.log (session.getItem("sessionEmail"));
+        // console.log (session.getItem("sessionAdmin"));
         return res.send(emailTrovata)
 
     } catch (error) {

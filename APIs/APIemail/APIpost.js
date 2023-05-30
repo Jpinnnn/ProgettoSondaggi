@@ -9,9 +9,9 @@ const routerEmail = express.Router();
 
 //inserisce un utente qualsiasi passando email, password e tipo di utente: true = admin, false = dipendente
 
-routerEmail.post('/postEmailList', async(req, res)=>{
+routerEmail.post('/postEmailList', async (req, res) => {
     try {
-        
+
         const ti = "@telematicainformatica.it"
 
         const nuovaEmail = new EmailList({
@@ -21,36 +21,50 @@ routerEmail.post('/postEmailList', async(req, res)=>{
             admin: req.body.admin
         })
 
-        if(!nuovaEmail.email || !nuovaEmail.password ||
-            nuovaEmail.email == "''" || nuovaEmail.email == '""' ||
-            nuovaEmail.password == "''" || nuovaEmail.password == '""' ||
-            nuovaEmail.email.includes(" ") || nuovaEmail.password.includes(" "))
-        {
-            return res.send("nessuna email o password inserita")
-        }
-
         //Se l'email non contiene @telematicainformatica.it
-        if(!nuovaEmail.email.includes(ti)){
+        if (!nuovaEmail.email.includes(ti)) {
             return res.send("email non valida")
         }
 
-        // // // // applicare filtro che verifica la presenza di una email già presente
+        //controlli sulla email e sulla password
+        if (!nuovaEmail.email || !nuovaEmail.password ||
+            nuovaEmail.email == "''" || nuovaEmail.email == '""' ||
+            nuovaEmail.password == "''" || nuovaEmail.password == '""') {
+            return res.send("nessuna email o password inserita")
+        }
+
+        //Controllo spazi
+        if(nuovaEmail.email.includes(" ") ){
+            console.log("Email con spazi: '", nuovaEmail.email,"'")
+            nuovaEmail.email = nuovaEmail.email.trim()
+            console.log("Email senza spazi: '",nuovaEmail.email,"'")
+        }
+        if(nuovaEmail.password.includes(" ")){
+            return res.send("La password non deve contenere spazi")
+        }
+
+
+        //filtro che verifica la presenza di una email già presente
+        if (await EmailList.findOne({ "email": nuovaEmail.email })) {
+            return res.send("Email già presente nel database")
+        }
+
         // // // // verificare che la password abbia almeno 8 caratteri
-        
+
         await nuovaEmail.save();
 
         console.log(nuovaEmail)
         return res.send(nuovaEmail)
 
     } catch (error) {
-        res.status(500).json({messaggio: error.message})
+        res.status(500).json({ messaggio: error.message })
     }
 })
 
 
 
 //inserisce un dipendente
-routerEmail.post('/postUserList', async(req, res)=>{
+routerEmail.post('/postUserList', async (req, res) => {
 
 })
 

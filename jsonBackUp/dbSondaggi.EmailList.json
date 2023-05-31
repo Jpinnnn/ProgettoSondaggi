@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "6470637d186d362839ba204b"
+  },
+  "email": "asd@telematicainformatica.it",
+  "password": "ciao",
+  "admin": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6475bc62d7fd51b75479f5b0"
+  },
+  "email": "asws @telematicainformatica.it",
+  "password": "ciao",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64776452f43a0cc3e8a7c67a"
+  },
+  "email": "gattovalentina@telematicainformatica.it",
+  "password": "ciao",
+  "admin": true,
+  "__v": 0
+}]

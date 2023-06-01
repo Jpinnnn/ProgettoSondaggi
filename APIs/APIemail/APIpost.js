@@ -23,7 +23,7 @@ routerEmail.post("/Login", async (req, res) => {
 
         if (!emailTrovata) {
             console.log("Nessun account trovato")
-            return res.status(400).json({messaggio: "Nessun account trovato"})
+            return res.status(401).json({messaggio: "Nessun account trovato"})
         }
 
         const jwtToken = jwt.sign(

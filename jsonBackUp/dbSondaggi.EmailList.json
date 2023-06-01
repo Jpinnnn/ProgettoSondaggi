@@ -11,7 +11,7 @@
   "_id": {
     "$oid": "6475bc62d7fd51b75479f5b0"
   },
-  "email": "asws @telematicainformatica.it",
+  "email": "asws@telematicainformatica.it",
   "password": "ciao",
   "admin": false,
   "__v": 0

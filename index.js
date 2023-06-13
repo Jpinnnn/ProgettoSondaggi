@@ -27,13 +27,15 @@ app.use('/API', APIgetEmail);
 app.use('/API', APIpostEmail);
 
 // const APIgetR = require('./APIs/APIrisp/APIget');
-// const APIpostR = require('./APIs/APIrisp/APIpost');
-// const APIpatchR = require('./APIs/APIrisp/APIpatch');
+const APIpostR = require('./APIs/APIrisp/APIpost');
+const APIputR = require('./APIs/APIrisp/APIput');
+const APIpatchR = require('./APIs/APIrisp/APIpatch');
 // const APIdeleteR = require('./APIs/APIrisp/APIdelete');
 
 // app.use('/API', APIgetR);
-// app.use('/API', APIpostR);
-// app.use('/API', APIpatchR);
+app.use('/API', APIpostR);
+app.use('/API', APIputR);
+app.use('/API', APIpatchR);
 // app.use('/API', APIdeleteR);
 
 const port = 3000;
@@ -46,7 +48,7 @@ app.listen(port, () => {
 app.get('/', function (req, res) {
     res.send('<h1>Benvenuto sulla home!</h1>' + ' Le API disponibili sono:' + '<br></br>' +
 
-        '----------------------------------------Sondaggi---------------------------------------' +
+        '---------------------------------------------------------SONDAGGI--------------------------------------------------------------' +
         '<br></br>' +
         "[GET] /API/getSondaggi => prende la lista dei sondaggi dal DB" + '<br></br>' +
         "[GET] /API/getSondaggioById/:idSondaggio => prende il SINGOLO sondaggio tramite ID" + '<br></br>' +
@@ -80,13 +82,13 @@ app.get('/', function (req, res) {
         "[PATCH] /API/updateRispostaById/:idRisposta => modifica una risposta tramite ID" + '<br></br>' +
         "[PATCH] /API/deleteRispostaById/:idRisposta => elimina una risposta tramite ID" + '<br></br>' +
         
-        "----------------------------------------RisposteAiSondaggi---------------------------------------" +
+        "--------------------------------------------------------RISPOSTEAISONDAGGI----------------------------------------------------" +
         '<br></br>' +
         "[GET] /API/getIncompletiById/:idSondaggio => ottiene il numero di sondaggi completi rispetto al totale passando l'ID del sondaggio" + '<br></br>' +
         
-        "----------------------------------------EmailList Login---------------------------------------" +
+        "-------------------------------------------------------------EMAILLIST--------------------------------------------------------" +
         '<br></br>' +
-        "[GET] /API/Login => Login" + '<br></br>' +
+        "[POST] /API/Login => Login tramite email e password => restituisce l'email, il tipo di utente (admin: true, user: false) e un token" + '<br></br>' +
         "[POST] /API/PostEmailList => crea un nuovo utente inserendo email, password e tipo di utente (a:true/u:false)" + '<br></br>' +
 
         '')

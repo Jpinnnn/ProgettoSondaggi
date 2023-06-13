@@ -4,11 +4,22 @@ const { RisposteAiSondaggi } = require('../../modelli/RisposteAiSondaggi');
 
 const routerRAS = express.Router(); //RAS=RisposteAiSondaggi
 
-//------------------------------POSTs--------------------------------------//
+//------------------------------PUTs--------------------------------------//
 
 //inserisce una risposta
 routerRAS.put("/putRAS", async(req, res) =>{
     RisposteAiSondaggi.init();
+
+    try {
+        
+        const {_id, titolo, emailDestinatari} = req.body;
+
+
+
+
+    } catch (error) {
+        res.status(500).json({ messaggio: error.message })
+    }
 
 })
 
@@ -18,4 +29,4 @@ routerRAS.put("/putRASbyId", async(req, res) =>{
 
 })
 
-module.exports = routerRisposteAiSondaggi;
+module.exports = routerRAS;
